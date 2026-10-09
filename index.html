@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="weather-app">
+
+        <section class="weather-card">
+
+            <!-- HEADER -->
+            <div class="app-header">
+                <p class="subtitle">WEATHER TODAY</p>
+
+                <h1>Cuaca di Sekitarmu</h1>
+
+                <p class="description">
+                    Cari informasi cuaca berdasarkan nama kota.
+                </p>
+            </div>
+
+
+            <!-- SEARCH -->
+            <form id="searchForm" class="search-form">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Masukkan nama kota..."
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    Cari
+                </button>
+
+            </form>
+
+
+            <!-- LOADING -->
+            <div id="loading" class="loading hidden">
+
+                <div class="spinner"></div>
+
+                <p>Mengambil data cuaca...</p>
+
+            </div>
+
+
+            <!-- ERROR -->
+            <div id="error" class="error hidden"></div>
+
+
+            <!-- CURRENT WEATHER -->
+            <section id="weatherResult" class="weather-result hidden">
+
+                <!-- LOCATION -->
+                <div class="location">
+
+                    <span>📍</span>
+
+                    <h2 id="cityName"></h2>
+
+                </div>
+
+
+                <!-- CURRENT WEATHER -->
+                <div class="weather-main">
+
+                    <img
+                        id="weatherIcon"
+                        src=""
+                        alt="Ikon cuaca"
+                    >
+
+                    <div>
+
+                        <p
+                            id="temperature"
+                            class="temperature"
+                        ></p>
+
+                        <p
+                            id="description"
+                            class="weather-description"
+                        ></p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEMPERATURE TOGGLE -->
+                <div class="temperature-toggle">
+
+                    <button
+                        type="button"
+                        id="celsiusBtn"
+                        class="active"
+                    >
+                        °C
+                    </button>
+
+                    <button
+                        type="button"
+                        id="fahrenheitBtn"
+                    >
+                        °F
+                    </button>
+
+                </div>
+
+
+                <!-- WEATHER INFO -->
+                <div class="weather-info">
+
+                    <div class="info-box">
+
+                        <span>💧</span>
+
+                        <div>
+
+                            <p>Kelembaban</p>
+
+                            <strong id="humidity"></strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <span>🌡️</span>
+
+                        <div>
+
+                            <p>Suhu terasa</p>
+
+                            <strong id="feelsLike"></strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORECAST -->
+                <div class="forecast-section">
+
+                    <h3>Prakiraan 5 Hari</h3>
+
+                    <div
+                        id="forecastContainer"
+                        class="forecast-container"
+                    ></div>
+
+                </div>
+
+
+                <!-- SEARCH HISTORY -->
+                <div class="history-section">
+
+                    <h3>Riwayat Pencarian</h3>
+
+                    <div
+                        id="historyContainer"
+                        class="history-container"
+                    ></div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
